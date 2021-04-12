@@ -20,6 +20,13 @@ const style = makeStyles((theme) => ({
       height: "100vh",
       display: "flex",
     },
+    [theme.breakpoints.up("sm")]: {
+      background:
+        "linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%)",
+      color: "white",
+      height: "100vh",
+      display: "flex",
+    },
 
     [theme.breakpoints.up("md")]: {
       background:
@@ -42,7 +49,13 @@ const style = makeStyles((theme) => ({
       color: "white",
       width: "80%",
       margin: "20% 0% 10% 0%",
-      marginLeft: "32px",
+      textAlign: "center",
+      height: "30%",
+    },
+    [theme.breakpoints.up("sm")]: {
+      color: "white",
+      width: "80%",
+      margin: "20% 0% 10% 0%",
       textAlign: "center",
       height: "30%",
     },
@@ -67,6 +80,10 @@ const style = makeStyles((theme) => ({
   heading: {
     fontFamily: theme.typography.body1.fontFamily,
     [theme.breakpoints.up("xs")]: {
+      fontWeight: "bold",
+      fontSize: "22px",
+    },
+    [theme.breakpoints.up("sm")]: {
       fontWeight: "bold",
       fontSize: "22px",
     },
@@ -106,8 +123,8 @@ const CounterApp = () => {
   return (
     <div className={classes.main}>
       <Grid container item>
-        <Grid item lg={4} md={4} sm={2}></Grid>
-        <Grid item lg={4} md={4} sm={8} className={classes.card}>
+        <Grid item lg={4} md={4} sm={3} xs={1}></Grid>
+        <Grid item lg={4} md={4} sm={6} xs={10} className={classes.card}>
           <Card>
             <Typography className={classes.heading}>
               Counter Application
@@ -142,7 +159,7 @@ const CounterApp = () => {
             </IconButton>
           </Card>
         </Grid>
-        <Grid item lg={4} md={4} sm={2}></Grid>
+        <Grid item lg={4} md={4} sm={3} xs={1}></Grid>
       </Grid>
     </div>
   );

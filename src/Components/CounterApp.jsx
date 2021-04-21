@@ -55,7 +55,7 @@ const style = makeStyles((theme) => ({
     [theme.breakpoints.up("sm")]: {
       color: "white",
       width: "80%",
-      margin: "2% 0% 10% 0%",
+      margin: "6% 0% 10% 0%",
       textAlign: "center",
       height: "30%",
     },

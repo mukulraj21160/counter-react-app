@@ -13,10 +13,23 @@ import RefreshIcon from "@material-ui/icons/Refresh";
 const style = makeStyles((theme) => ({
   main: {
     display: "flex",
-    alignItems: "center",
     background:
       "linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%)",
     height: "100vh",
+    [theme.breakpoints.up("md")]: {
+      display: "flex",
+      alignItems: "center",
+      background:
+        "linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%)",
+      height: "100vh",
+    },
+    [theme.breakpoints.up("lg")]: {
+      display: "flex",
+      alignItems: "center",
+      background:
+        "linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%)",
+      height: "100vh",
+    },
   },
   card: {
     display: "flex",
@@ -36,6 +49,7 @@ const style = makeStyles((theme) => ({
   main_card: {
     height: "200px",
     width: "250px",
+    marginTop: "100px",
     [theme.breakpoints.up("md")]: {
       height: "230px",
       width: "300px",

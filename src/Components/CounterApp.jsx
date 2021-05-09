@@ -12,89 +12,61 @@ import RefreshIcon from "@material-ui/icons/Refresh";
 
 const style = makeStyles((theme) => ({
   main: {
-    fontFamily: theme.typography.body1.fontFamily,
-    [theme.breakpoints.up("xs")]: {
-      background:
-        "linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%)",
-      color: "white",
-      height: "100vh",
-      display: "flex",
-    },
-    [theme.breakpoints.up("sm")]: {
-      background:
-        "linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%)",
-      color: "white",
-      height: "100vh",
-      display: "flex",
-    },
-
-    [theme.breakpoints.up("md")]: {
-      background:
-        "linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%)",
-      color: "white",
-      height: "100vh",
-      display: "flex",
-    },
-    [theme.breakpoints.up("lg")]: {
-      background:
-        "linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%)",
-      color: "white",
-      height: "100vh",
-      display: "flex",
-    },
+    display: "flex",
+    alignItems: "center",
+    background:
+      "linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%)",
+    height: "100vh",
   },
   card: {
-    fontFamily: theme.typography.body1.fontFamily,
-    [theme.breakpoints.up("xs")]: {
-      color: "white",
-      width: "80%",
-      margin: "20% 0% 10% 0%",
-      textAlign: "center",
-      height: "30%",
-    },
-    [theme.breakpoints.up("sm")]: {
-      color: "white",
-      width: "80%",
-      margin: "6% 0% 10% 0%",
-      textAlign: "center",
-      height: "30%",
-    },
-
+    display: "flex",
+    justifyContent: "center",
+    textAlign: "center",
     [theme.breakpoints.up("md")]: {
-      color: "white",
-      width: "30%",
-      margin: "10% 0% 10% 0%",
-      padding: "20px 20px 20px 20px",
+      display: "flex",
+      justifyContent: "center",
       textAlign: "center",
-      height: "50%",
     },
     [theme.breakpoints.up("lg")]: {
-      color: "white",
-      width: "30%",
-      margin: "10% 0% 10% 0%",
-      padding: "20px 20px 20px 20px",
+      display: "flex",
+      justifyContent: "center",
       textAlign: "center",
-      height: "50%",
     },
   },
-  heading: {
-    fontFamily: theme.typography.body1.fontFamily,
-    [theme.breakpoints.up("xs")]: {
-      fontWeight: "bold",
-      fontSize: "22px",
+  main_card: {
+    height: "200px",
+    width: "250px",
+    [theme.breakpoints.up("md")]: {
+      height: "230px",
+      width: "300px",
     },
-    [theme.breakpoints.up("sm")]: {
-      fontWeight: "bold",
-      fontSize: "22px",
+    [theme.breakpoints.up("lg")]: {
+      height: "300px",
+      width: "300px",
     },
-
+  },
+  title: {
+    paddingTop: "5px",
+    fontWeight: "bold",
+    fontSize: "22px",
     [theme.breakpoints.up("md")]: {
       fontWeight: "bold",
-      fontSize: "32px",
+      fontSize: "24px",
+      paddingTop: "10px",
     },
     [theme.breakpoints.up("lg")]: {
       fontWeight: "bold",
-      fontSize: "32px",
+      fontSize: "26px",
+      paddingTop: "20px",
+    },
+  },
+  data: {
+    paddingTop: "30px",
+    [theme.breakpoints.up("md")]: {
+      paddingTop: "35px",
+    },
+    [theme.breakpoints.up("lg")]: {
+      paddingTop: "50px",
     },
   },
 }));
@@ -103,17 +75,17 @@ const CounterApp = () => {
   const [counter, setCounter] = useState(0);
 
   const increment = () => {
-    if (counter < 20) {
+    if (counter < 10) {
       setCounter(counter + 1);
     } else {
-      alert("max value is 20");
+      alert("max value is 10");
     }
   };
   const decrement = () => {
     if (counter > 0) {
       setCounter(counter - 1);
     } else {
-      alert("Zero Is The Limit");
+      alert("zero Is The Limit");
     }
   };
   const reset = () => {
@@ -123,16 +95,13 @@ const CounterApp = () => {
   return (
     <div className={classes.main}>
       <Grid container item>
-        <Grid item lg={4} md={4} sm={3} xs={1}></Grid>
-        <Grid item lg={4} md={4} sm={6} xs={10} className={classes.card}>
-          <Card>
-            <Typography className={classes.heading}>
+        <Grid item lg={4} md={4} xs={1}></Grid>
+        <Grid item lg={4} md={4} xs={10} className={classes.card}>
+          <Card className={classes.main_card}>
+            <Typography className={classes.title}>
               Counter Application
             </Typography>
-            <br />
-            <br />
-            <br />
-            <div>
+            <div className={classes.data}>
               <Typography>
                 <IconButton
                   variant="contained"
@@ -152,14 +121,13 @@ const CounterApp = () => {
               </Typography>
             </div>
             <br />
-            <br />
             <IconButton varient="contained" color="secondary" onClick={reset}>
               <RefreshIcon />
               reset
             </IconButton>
           </Card>
         </Grid>
-        <Grid item lg={4} md={4} sm={3} xs={1}></Grid>
+        <Grid item lg={4} md={4} xs={1}></Grid>
       </Grid>
     </div>
   );

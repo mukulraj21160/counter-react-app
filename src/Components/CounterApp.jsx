@@ -16,35 +16,11 @@ const style = makeStyles((theme) => ({
     background:
       "linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%)",
     height: "100vh",
-    [theme.breakpoints.up("md")]: {
-      display: "flex",
-      alignItems: "center",
-      background:
-        "linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%)",
-      height: "100vh",
-    },
-    [theme.breakpoints.up("lg")]: {
-      display: "flex",
-      alignItems: "center",
-      background:
-        "linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%)",
-      height: "100vh",
-    },
   },
   card: {
     display: "flex",
     justifyContent: "center",
     textAlign: "center",
-    [theme.breakpoints.up("md")]: {
-      display: "flex",
-      justifyContent: "center",
-      textAlign: "center",
-    },
-    [theme.breakpoints.up("lg")]: {
-      display: "flex",
-      justifyContent: "center",
-      textAlign: "center",
-    },
   },
   main_card: {
     height: "200px",
